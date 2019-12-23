@@ -1,2 +1,0 @@
-# CNNDetection
-Coming soon!

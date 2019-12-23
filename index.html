@@ -1,0 +1,344 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!--
+  <script src="./resources/jsapi" type="text/javascript"></script>
+  <script type="text/javascript" async>google.load("jquery", "1.3.2");</script>
+ -->
+<style type="text/css">
+  body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+  }
+  h1 {
+    font-weight:300;
+  }
+  h2 {
+    font-weight:300;
+  }
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+  img.rounded {
+    border: 0px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+</style>
+
+
+
+    <title>CNN-generated images are surprisingly easy to spot... for now</title>
+    <meta property="og:image" content="https://peterwang512.github.io/CNNDetection/images/teaser.png">
+    <meta property="og:title" content="CNN-generated images are surprisingly easy to spot...for now">
+    <!-- <meta property='og:video' content='https://www.youtube.com/watch?v=TUootD36Xm0'/> -->
+  </head>
+
+  <body>
+        <br>
+          <center>
+            <span style="font-size:34px">CNN-generated images are surprisingly easy to spot...for now</span><br><br>
+
+          <table align="center" width="850px">
+            <tbody><tr>
+                    <td align="center" width="205px">
+              <center>
+                <span style="font-size:20px"><a href="http://peterwang512.github.io">Sheng-Yu Wang</a><sup>1</sup></span>
+                </center>
+                </td>
+                    <td align="center" width="175px">
+              <center>
+                <span style="font-size:20px"><a href="http://www.oliverwang.info">Oliver Wang</a><sup>2</sup></span>
+                </center>
+                </td>
+                    <td align="center" width="175px">
+              <center>
+                <span style="font-size:20px"><a href="http://richzhang.github.io">Richard Zhang</a><sup>2</sup></span>
+                </center>
+                </td>
+                    <td align="center" width="175px">
+              <center>
+                <span style="font-size:20px"><a href="http://andrewowens.com">Andrew Owens</a><sup>1</sup></span>
+                </center>
+                </td>
+                <td align="center" width="175px">
+              <center>
+                <span style="font-size:20px"><a href="http://www.eecs.berkeley.edu/~efros/">Alexei A. Efros</a><sup>1</sup></span>
+                </center>
+                </td>
+            </tr>
+        </tbody></table>
+
+          <table align="center" width="700px">
+            <tbody><tr>
+                    <td align="center" width="100px">
+              <center>
+                    <span style="font-size:20px"></span>
+                </center>
+                </td>
+                    <td align="center" width="250px">
+              <center>
+                    <span style="font-size:20px"><sup>1</sup>UC Berkeley</span>
+                </center>
+                </td>
+                    <td align="center" width="250px">
+              <center>
+                    <span style="font-size:20px"><sup>2</sup>Adobe Research</span>
+                </center>
+                </td>
+                    <td align="center" width="100px">
+              <center>
+                    <span style="font-size:20px"></span>
+                </center>
+                </td>
+        </tr></tbody></table>
+
+          <table align="center" width="700px">
+            <tbody><tr>
+<!--                     <td align="center" width="50px">
+              <center>
+                    <span style="font-size:18px"></span>
+                </center>
+                </td> -->
+                    <td align="center" width="200px">
+              <center>
+                <br>
+                <span style="font-size:20px">Code (coming soon) <a href="https://github.com/peterwang512/CNN-Detection"> [GitHub]</a></span>
+                </center>
+                </td>
+                    <td align="center" width="200px">
+              <center>
+                <br>
+                <span style="font-size:20px">ArXiv 2019 <a href=""> <!-- [Paper] -->[Paper]</a></span>
+                </center>
+                </td>
+
+        </tr></tbody></table>
+          </center>
+        <br>
+        <table align="center" width="1000px">
+          <tbody><tr>
+                  <td width="400px">
+            <center>
+                      <img class="rounded" src="./images/teaser.png" width="1000px">
+            </center>
+                  </td>
+                  </tr>
+                  </tbody></table>
+            <br>
+            Are CNN-generated images hard to distinguish from real images? We show that a classifier trained to detect images generated by only one CNN (ProGAN, far left) can detect those generated by many other models (remaining columns).
+            <br>
+          <br>
+      <hr>
+
+        <center><h2>Abstract</h2></center>
+        In this work we ask whether it is possible to create a ``universal'' detector for telling apart real images from these generated by a CNN, regardless of architecture or dataset used. To test this, we collect a dataset consisting of fake images generated by 11 different CNN-based image generator models, chosen to span the space of commonly used architectures today (ProGAN, StyleGAN, BigGAN, CycleGAN, StarGAN, GauGAN, DeepFakes, cascaded refinement networks, implicit maximum likelihood estimation, second-order attention super-resolution, seeing-in-the-dark). We demonstrate that, with careful pre- and post-processing and data augmentation, a standard image classifier trained on <i>only one</i> specific CNN generator (ProGAN) is able to generalize surprisingly well to unseen architectures, datasets, and training methods (including the just released StyleGAN2. Our findings suggest the intriguing possibility that today's CNN-generated images share some common systematic flaws, preventing them from achieving realistic image synthesis. <br>
+
+<!--         <hr><center><h2 id="slides_video">Video</h2></center>
+        <p align="center">
+<iframe width="660" height="395" src="https://www.youtube.com/embed/TUootD36Xm0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe></p>
+          <center>
+            <span style="font-size:20px"><a href="https://www.dropbox.com/s/fy0kihreilkck18/detect_photoshop.pptx?dl=0">[Slides (33.6 MB)]</a><span style="display:inline-block; width: 100px;"></span><a href="./presentation.pdf">[PDF Slides (4.7 MB)]</a></span></span>
+          </center>
+ -->
+
+    <br>
+    <hr>
+
+      <div class="disclaimerbox">
+          <!-- <center><h2>How to interpret the results</h2></center> -->
+
+         <span style="color:#646464">
+            <center><span style="font-size:28px"><b>Discussion</b></span></center>
+
+            <br>
+
+        Despite the alarm that has been raised by the rapidly improving quality of image synthesis methods, our results suggest that today's CNN-generated images retain contain <i>detectable fingerprints</i> that distinguish them from real photos. This allows forensic classifiers to generalize from one model to another without extensive adaptation. <br><br>
+
+        However, this does not mean that the current situation will persist.  For example, due to the difficulties of achieving Nash equilibria, none of the current GAN-based architectures are optimized to convergence, <i>i.e.</i> when the generator wins against the discriminator. Were this to change, we would suddenly find ourselves in a situation when synthetic images are completely indistinguishable from real ones. <br><br>
+
+        Even with the current techniques, there remain practical reasons for concern. First, even the best forensics detector will have some trade-off between true detection and false-positive rates. Since a malicious user is typically looking to create a single fake image (rather than a distribution of fakes), they could simply hand-pick the fake image which pass the detection threshold. Second, malicious use of fake imagery is likely be deployed a social media platform (Facebook, Twitter, YouTube, etc), so the data will undergone a number of often aggressive transformations (proprietary compression algorithms, resizing, re-sampling, etc).
+        While we demonstrated robustness to some degree of JPEG compression, blurring, and resizing, much more work is needed to evaluate how well the current detectors can cope with these transformations <i>in-the-wild</i>.
+        Finally, most documented instances of effective deployment of visual fakes to date have been using classic "shallow" methods, such as Photoshop.  We have experimented in running our detector on the face-aware liquify dataset from <a href="https://peterwang512.github.io/FALdetector/">[Wang et al., ICCV 2019]</a>, and found that our method performs at chance on this data. This suggests that shallow methods exhibit fundamentally different behavior than deep methods and should not be neglected. <br><br>
+
+        We note that detecting fake images is just one small piece of the puzzle of how to  combat the threat of misinformation from images. Effective solutions will need to incorporate a wide range of strategies, both social as well as technical, as other attributes such as the context in which the image is seen can be equally important as whether it is real or manipulated. <br><br>
+      </span>
+
+      </div>
+
+           <br><hr><center><h2>Code and Models</h2></center><table align="center" width="900px">
+
+          <tbody>
+          <!-- <tr> -->
+                <!-- <td align=center width=600px> --><!-- </td> -->
+        <!-- </tr> -->
+
+        </tbody></table><table align="center" width="750px">
+          <tbody>
+<!--           <tr>
+                    <td align="center" width="750px">
+            <center>
+              </center></td><td><a href="https://github.com/peterwang512/FALdetector">
+              <img class="round" style="width:750px" src="./images/classifier.png"></a>
+            </td>
+        </tr> -->
+      </tbody>      </table>
+
+      <br>
+
+        <center>
+        <span style="font-size:22px">Coming soon! <a href="https://github.com/peterwang512/CNNDetection">[GitHub]</a></span>
+<!--       <br>
+          <br><hr><center><h2>In-the-Wild Image Splice Dataset</h2></center><table align="center" width="900px">
+          <tbody><tr>
+        </tr>
+        </tbody></table><table align="center" width="800px">
+          <tbody><tr>
+                    <td align="center" width="800px">
+            <center>
+              </center></td><td>
+              <img class="round" style="width:800px" src="./images/mask_sample.jpg">
+            </td>
+        </tr>
+      </tbody></table>
+      <br>
+        <center>
+        <span style="font-size:22px"><a href="in_wild/in_wild.tar.gz">[Download (89.2 MB)]</a>
+        <br>
+        </span></center><table align="center" width="800px">
+        <tbody><tr></tr>
+      </tbody></table>
+      <br> -->
+
+      <hr>
+        <center><h2>Paper</h2></center><table align="center" width="700" px="">
+
+          <tbody><tr>
+          <td><a href="https://peterwang512.github.io"><img class="layered-paper-big" style="height:175px" src="./images/firstpg.png"></a></td>
+          <td><span style="font-size:12pt">S.-Y. Wang, O. Wang, R. Zhang, A. Owens, A. A. Efros.</span><br>
+          <b><span style="font-size:12pt">CNN-generated images are surprisingly easy to spot...for now</span></b><br>
+          <span style="font-size:12pt">In Arxiv, 2019 (<a href="">Paper</a>)</span>
+          </td>
+
+          <br>
+          <table align="center" width="600px">
+            <tbody>
+              <tr>
+                <td>
+                  <center>
+                    <span style="font-size:22px">
+                      <a href="./bibtex.txt" target="_blank">[Bibtex]</a>
+                    </span>
+                  </center>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      <br>
+
+      <br><hr>
+
+
+        <table align="center" width="1100px">
+          <tbody><tr>
+                  <td width="400px">
+            <left>
+          <center><h2>Acknowledgements</h2></center>
+          We'd like to thank Jaakko Lehtinen, Taesung Park, and Jacob (Minyoung) Huh for helpful discussions. We are grateful to Xu Zhang for significant help with comparisons. This work was funded, in part, by DARPA MediFor, and grants from Adobe and the UC Berkeley Center for Long-Term Cybersecurity. The views, opinions and/or findings expressed are those of the authors and should not be interpreted as representing the official views or policies of the Department of Defense or the U.S. Government.
+      </left>
+    </td>
+       </tr>
+    </tbody></table>
+
+    <br><br>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75863369-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75863369-7');
+</script>
+
+
+</body></html>
