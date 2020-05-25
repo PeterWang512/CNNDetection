@@ -11,8 +11,6 @@ from sklearn.metrics import average_precision_score, precision_recall_curve, acc
 
 from networks.resnet import resnet50
 
-from IPython import embed
-
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-d','--dir', type=str, default='examples_realfakedir')
 parser.add_argument('-m','--model_path', type=str, default='weights/blur_jpg_prob0.5.pth')
