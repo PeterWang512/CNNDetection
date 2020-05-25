@@ -57,6 +57,7 @@ f_acc = accuracy_score(y_true[y_true==1], y_pred[y_true==1] > 0.5)
 acc = accuracy_score(y_true, y_pred > 0.5)
 ap = average_precision_score(y_true, y_pred)
 
+print('# reals: {}, # fakes: {}'.format(np.sum(1-y_true), np.sum(y_true)))
 print('AP: {:2.2%}, Acc: {:2.2%}, Acc (real): {:2.2%}, Acc (fake): {:2.2%}'.format(ap, acc, r_acc, f_acc))
 
 
