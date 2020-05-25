@@ -27,6 +27,11 @@ python demo.py examples/fake.png weights/blur_jpg_prob0.1.pth
 
 `demo.py` simply runs the model on a single image, and outputs the uncalibrated prediction.
 
+```
+python demo_dir.py -d example_realfakedir -m weights/blur_jpg_prob0.5.pth
+```
+
+
 ## (3) Dataset
 The testset evaluated in the paper can be downloaded [here](https://drive.google.com/file/d/1z_fD3UKgWQyOTZIBbYSaQ-hz4AzUrLC1/view?usp=sharing).
 
