@@ -37,7 +37,7 @@ trans = transforms.Compose([
 ])
 
 # Dataset loader
-dataset = datasets.ImageFolder('example_realfakedir', transform=trans)
+dataset = datasets.ImageFolder(opt.dir, transform=trans)
 data_loader = torch.utils.data.DataLoader(dataset,
                                           batch_size=opt.batch_size,
                                           shuffle=False,
