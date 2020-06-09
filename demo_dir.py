@@ -85,6 +85,6 @@ if(not opt.size_only):
   acc = accuracy_score(y_true, y_pred > 0.5)
   ap = average_precision_score(y_true, y_pred)
 
-  print('AP: {:2.2%%}, Acc: {:2.2%%}, Acc (real): {:2.2%%}, Acc (fake): {:2.2%%}'.format(ap, acc, r_acc, f_acc))
+  print('AP: {:2.2f%%}, Acc: {:2.2f%%}, Acc (real): {:2.2f%%}, Acc (fake): {:2.2f%%}'.format(ap, acc, r_acc, f_acc))
 
 
