@@ -1,15 +1,15 @@
 
 echo ''
 echo biggan
-~/anaconda3/bin/python demo_dir.py -d examples2/biggan -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/biggan
 
 echo ''
 echo crn
-~/anaconda3/bin/python demo_dir.py -d examples2/crn -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/crn
 
 echo ''
 echo cyclegan
-~/anaconda3/bin/python demo_dir.py -d examples2/cyclegan/* -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/cyclegan/*
 
 echo ''
 echo deepfake
@@ -17,15 +17,15 @@ echo deepfake
 
 echo ''
 echo gaugan
-~/anaconda3/bin/python demo_dir.py -d examples2/gaugan -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/gaugan
 
 echo ''
 echo imle
-~/anaconda3/bin/python demo_dir.py -d examples2/imle -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/imle
 
 echo ''
 echo progan
-~/anaconda3/bin/python demo_dir.py -d examples2/progan/* -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/progan/*
 
 echo ''
 echo san
@@ -37,16 +37,16 @@ echo seeingdark
 
 echo ''
 echo stargan
-~/anaconda3/bin/python demo_dir.py -d examples2/stargan -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/stargan
 
 echo ''
 echo stylegan
-~/anaconda3/bin/python demo_dir.py -d examples2/stylegan/* -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/stylegan/*
 
 echo ''
 echo stylegan2
-~/anaconda3/bin/python demo_dir.py -d examples2/stylegan2/* -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/stylegan2/*
 
 echo ''
 echo whichfaceisreal
-~/anaconda3/bin/python demo_dir.py -d examples2/whichfaceisreal -b 1
+~/anaconda3/bin/python demo_dir.py -d examples2/whichfaceisreal
