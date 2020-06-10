@@ -13,7 +13,7 @@ echo cyclegan
 
 echo ''
 echo deepfake
-~/anaconda3/bin/python demo_dir.py -d examples2/deepfake -b 1 --crop 224
+~/anaconda3/bin/python demo_dir.py -d examples2/deepfake --crop 224
 
 echo ''
 echo gaugan
@@ -29,11 +29,11 @@ echo progan
 
 echo ''
 echo san
-~/anaconda3/bin/python demo_dir.py -d examples2/san -b 1 --crop 224
+~/anaconda3/bin/python demo_dir.py -d examples2/san --crop 224
 
 echo ''
 echo seeingdark
-~/anaconda3/bin/python demo_dir.py -d examples2/seeingdark -b 1 --crop 224
+~/anaconda3/bin/python demo_dir.py -d examples2/seeingdark --crop 224
 
 echo ''
 echo stargan
