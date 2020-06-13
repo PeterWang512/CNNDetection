@@ -21,7 +21,13 @@ def dataset_folder(opt, root):
 
 
 def binary_dataset(opt, root):
-    crop_func = transforms.RandomCrop if opt.isTrain else transforms.CenterCrop
+    if opt.isTrain:
+        crop_func = transforms.RandomCrop(opt.cropSize)
+    elif opt.no_crop:
+        crop_func = transforms.Lambda(lambda img: img)
+    else:
+        crop_func = transforms.CenterCrop(opt.cropSize)
+
     if opt.isTrain and not opt.no_flip:
         flip_func = transforms.RandomHorizontalFlip()
     else:
@@ -36,7 +42,7 @@ def binary_dataset(opt, root):
             transforms.Compose([
                 rz_func,
                 transforms.Lambda(lambda img: data_augment(img, opt)),
-                crop_func(opt.cropSize),
+                crop_func,
                 flip_func,
                 transforms.ToTensor(),
                 transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),

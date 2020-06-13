@@ -6,7 +6,7 @@ results_dir = './results/'
 mkdir(results_dir)
 
 # root to the testsets
-dataroot = './dataset/'
+dataroot = './dataset/test/'
 
 # list of synthesis algorithms
 vals = ['progan', 'stylegan', 'biggan', 'cyclegan', 'stargan', 'gaugan',
