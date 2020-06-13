@@ -2,7 +2,7 @@
 
 **CNN-generated images are surprisingly easy to spot...for now**  
 [Sheng-Yu Wang](https://peterwang512.github.io/), [Oliver Wang](http://www.oliverwang.info/), [Richard Zhang](https://richzhang.github.io/), [Andrew Owens](http://andrewowens.com/), [Alexei A. Efros](https://people.eecs.berkeley.edu/~efros/).
-<br>In [ArXiv](https://arxiv.org/abs/1912.11035), 2019.
+<br>To appear in [CVPR](https://arxiv.org/abs/1912.11035), 2020.
 
 <img src='https://peterwang512.github.io/CNNDetection/images/teaser.png' width=1200>
 
@@ -30,7 +30,7 @@ python demo.py examples/fake.png weights/blur_jpg_prob0.1.pth
 ## (3) Dataset
 The testset evaluated in the paper can be downloaded [here](https://drive.google.com/file/d/1z_fD3UKgWQyOTZIBbYSaQ-hz4AzUrLC1/view?usp=sharing).
 
-The zip file contains images from 13 CNN-based synthetic  algorithms, including the 12 testsets from the paper and images downloaded from whichfaceisreal.com. Images from each algorithm are stored in a separate folder. In each category, real images are in the `0_real` folder, and synthetic images are in the `1_fake` folder. 
+The zip file contains images from 13 CNN-based synthesis algorithms, including the 12 testsets from the paper and images downloaded from whichfaceisreal.com. Images from each algorithm are stored in a separate folder. In each category, real images are in the `0_real` folder, and synthetic images are in the `1_fake` folder. 
 
 Note: ProGAN, StyleGAN, StyleGAN2, CycleGAN testset contains multiple classes, which are stored in separate subdirectories.
 
