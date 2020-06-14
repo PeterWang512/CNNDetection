@@ -15,7 +15,7 @@ from tqdm import tqdm
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-d','--dir', nargs='+', type=str, default='examples/realfakedir')
-parser.add_argument('-m','--model_path', type=str, default='weights/blur_jpg_prob0.1.pth')
+parser.add_argument('-m','--model_path', type=str, default='weights/blur_jpg_prob0.5.pth')
 parser.add_argument('-b','--batch_size', type=int, default=32)
 parser.add_argument('-j','--workers', type=int, default=4, help='number of workers')
 parser.add_argument('-c','--crop', type=int, default=None, help='by default, do not crop. specify crop size')

@@ -11,7 +11,7 @@ from networks.resnet import resnet50
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('-f','--file', default='examples_realfakedir')
-parser.add_argument('-m','--model_path', type=str, default='weights/blur_jpg_prob0.1.pth')
+parser.add_argument('-m','--model_path', type=str, default='weights/blur_jpg_prob0.5.pth')
 parser.add_argument('-c','--crop', type=int, default=None, help='by default, do not crop. specify crop size')
 parser.add_argument('--use_cpu', action='store_true', help='uses gpu by default, turn on to use cpu')
 
