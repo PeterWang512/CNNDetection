@@ -24,8 +24,8 @@
 
 ```
 # Model weights need to be downloaded.
-python demo.py examples/real.png weights/blur_jpg_prob0.1.pth
-python demo.py examples/fake.png weights/blur_jpg_prob0.1.pth
+python demo.py -f examples/real.png -m weights/blur_jpg_prob0.1.pth
+python demo.py -f examples/fake.png -m weights/blur_jpg_prob0.1.pth
 ```
 
 `demo.py` simply runs the model on a single image, and outputs the uncalibrated prediction.
