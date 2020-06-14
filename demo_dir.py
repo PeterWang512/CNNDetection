@@ -52,7 +52,7 @@ if(type(opt.dir)==str):
 print('Loading [%i] datasets'%len(opt.dir))
 data_loaders = []
 for dir in opt.dir:
-  dataset = datasets.ImageFolder(opt.dir[0], transform=trans)
+  dataset = datasets.ImageFolder(dir, transform=trans)
   data_loaders+=[torch.utils.data.DataLoader(dataset,
                                           batch_size=opt.batch_size,
                                           shuffle=False,
