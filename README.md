@@ -19,7 +19,9 @@
 
 
 ## (2) Quick start
- 
+
+### Run on a single image
+
 ```
 # Model weights need to be downloaded.
 python demo.py examples/real.png weights/blur_jpg_prob0.1.pth
@@ -27,6 +29,14 @@ python demo.py examples/fake.png weights/blur_jpg_prob0.1.pth
 ```
 
 `demo.py` simply runs the model on a single image, and outputs the uncalibrated prediction.
+
+### Run on a dataset
+
+```
+python demo_dir.py -d examples/realfakedir -m weights/blur_jpg_prob0.1.pth
+```
+
+`demo_dir.py` runs the model on a dataset and outputs AP and accuracy
 
 ## (3) Dataset
 
@@ -71,7 +81,7 @@ python train.py --name blur_jpg_prob0.5 --blur_prob 0.5 --blur_sig 0.0,3.0 --jpg
 After the testset and the model weights are downloaded, one can evaluate the models by running:
 
 ```
-# Run evaluation script. Model weights need to be downloaded.
+# Run evaluation script. Model weights need to be downloaded. See eval_config.py for flags
 python eval.py
 ```
 
