@@ -87,100 +87,53 @@ After the testset and the model weights are downloaded, one can evaluate the mod
 python eval.py
 ```
 
-Besides print-outs, the results will also be stored in a csv file in the `results` folder. Configurations such as the path of the dataset, model weight are in `eval_config.py`, and one can modify the evaluation by changing the configurations. The following are the models' performances on the released set:
+Besides print-outs, the results will also be stored in a csv file in the `results` folder. Configurations such as the path of the dataset, model weight are in `eval_config.py`, and one can modify the evaluation by changing the configurations.
 
-<b>[Blur+JPEG(0.1)]</b>
-
-|Testset   |Accuracy|  AP |
-|:--------:|:------:|:---:|
-|ProGAN    |100.0%	|100.0%|
-|StyleGAN  |87.1%	|99.6%|
-|BigGAN    |70.2%	|84.5%|
-|CycleGAN  |85.2%	|93.5%|
-|StarGAN   |91.7%	|98.2%|
-|GauGAN    |78.9%	|89.5%|
-|CRN       |86.3%	|98.2%|
-|IMLE      |86.2%	|98.4%|
-|SITD      |90.3%	|97.2%|
-|SAN       |50.5%	|70.5%|
-|Deepfake  |53.5%	|89.0%|
-|StyleGAN2 |84.4%	|99.1%|
-|Whichfaceisreal|83.6%	|93.2%|
-
-
-
-<b>[Blur+JPEG(0.5)]</b>
-
-|Testset   |Accuracy|  AP  |
-|:--------:|:------:|:----:|
-|ProGAN    | 100.0%	|100.0%|
-|StyleGAN  | 73.4%	|98.5% |
-|BigGAN    | 59.0%	|88.2% |
-|CycleGAN  | 80.8%	|96.8% |
-|StarGAN   | 81.0%	|95.4% |
-|GauGAN    | 79.3%	|98.1% |
-|CRN       | 87.6%	|98.9% |
-|IMLE      | 94.1%	|99.5% |
-|SITD      | 78.3%	|92.7% |
-|SAN       | 50.0%	|63.9% |
-|Deepfake  | 51.1%	|66.3% |
-|StyleGAN2 | 68.4%	|98.0% |
-|Whichfaceisreal| 63.9%	|88.8% |
 
 **6/13/2020 Update** Additionally, we tested on uncropped images, and observed better performances on most categories. To evaluate without center-cropping:
-
 ```
 # Run evaluation script without cropping. Model weights need to be downloaded.
 python eval.py --no_crop --batch_size 1
 ```
 
-The results are as follows:
-
-<b>[Blur+JPEG(0.1)]</b>
-
-|Testset   |Accuracy|  AP |
-|:--------:|:------:|:---:|
-|ProGAN    |100.0%	|100.0%|
-|StyleGAN  |90.2%	|99.8% |
-|BigGAN    |71.2%	|86.0% |
-|CycleGAN  |87.6%	|94.9% |
-|StarGAN   |94.6%	|99.0% |
-|GauGAN    |81.4%	|90.8% |
-|CRN       |86.3%	|99.8% |
-|IMLE      |86.3%	|99.8% |
-|SITD      |98.1%	|99.8% |
-|SAN       |50.0%	|68.6% |
-|Deepfake  |50.7%	|84.5% |
-|StyleGAN2 |86.9%	|99.5% |
-|Whichfaceisreal|91.6%	|99.8%|
-
-
+The following are the models' performances on the released set, with cropping to 224x224 (as in the paper), and without cropping.
 
 <b>[Blur+JPEG(0.5)]</b>
 
-|Testset   |Accuracy|  AP  |
-|:--------:|:------:|:----:|
-|ProGAN    | 100.0%	|100.0%|
-|StyleGAN  | 77.5%	|99.3% |
-|BigGAN    | 59.5%	|90.4% |
-|CycleGAN  | 84.6%	|97.9% |
-|StarGAN   | 84.7%	|97.5% |
-|GauGAN    | 82.9%	|98.8% |
-|CRN       | 97.8%	|100.0% |
-|IMLE      | 98.8%	|100.0% |
-|SITD      | 93.9%	|99.6% |
-|SAN       | 50.0%	|62.8% |
-|Deepfake  | 50.4%	|63.1% |
-|StyleGAN2 | 72.4%	|99.1% |
-|Whichfaceisreal| 75.2%	|100.0% |
+|Testset   |Acc (224)|  AP (224)  |Acc (No crop)|  AP  (No crop)|
+|:--------:|:------:|:----:|:------:|:----:|
+|ProGAN    | 100.0%	|100.0%|  100.0%	|100.0%|
+|StyleGAN  | 73.4%	|98.5% |  77.5%	|99.3% |
+|BigGAN    | 59.0%	|88.2% |  59.5%	|90.4% |
+|CycleGAN  | 80.8%	|96.8% |  84.6%	|97.9% |
+|StarGAN   | 81.0%	|95.4% |  84.7%	|97.5% |
+|GauGAN    | 79.3%	|98.1% |  82.9%	|98.8% |
+|CRN       | 87.6%	|98.9% |  97.8%	|100.0% |
+|IMLE      | 94.1%	|99.5% |  98.8%	|100.0% |
+|SITD      | 78.3%	|92.7% |  93.9%	|99.6% |
+|SAN       | 50.0%	|63.9% |  50.0%	|62.8% |
+|Deepfake  | 51.1%	|66.3% |  50.4%	|63.1% |
+|StyleGAN2 | 68.4%	|98.0% |  72.4%	|99.1% |
+|Whichfaceisreal| 63.9%	|88.8% |  75.2%	|100.0% |
 
 
+<b>[Blur+JPEG(0.1)]</b>
 
-
-
-
-
-
+|Testset   |Acc (224)|  AP (224)  |Acc (No crop)|  AP  (No crop)|
+|:--------:|:------:|:----:|:------:|:----:|
+|ProGAN    |100.0%	|100.0%| 100.0%	|100.0%|
+|StyleGAN  |87.1%	|99.6%| 90.2%	|99.8% |
+|BigGAN    |70.2%	|84.5%| 71.2%	|86.0% |
+|CycleGAN  |85.2%	|93.5%| 87.6%	|94.9% |
+|StarGAN   |91.7%	|98.2%| 94.6%	|99.0% |
+|GauGAN    |78.9%	|89.5%| 81.4%	|90.8% |
+|CRN       |86.3%	|98.2%| 86.3%	|99.8% |
+|IMLE      |86.2%	|98.4%| 86.3%	|99.8% |
+|SITD      |90.3%	|97.2%| 98.1%	|99.8% |
+|SAN       |50.5%	|70.5%| 50.0%	|68.6% |
+|Deepfake  |53.5%	|89.0%| 50.7%	|84.5% |
+|StyleGAN2 |84.4%	|99.1%| 86.9%	|99.5% |
+|Whichfaceisreal|83.6%	|93.2%| 91.6%	|99.8%|
 
 ## (A) Acknowledgments
 
