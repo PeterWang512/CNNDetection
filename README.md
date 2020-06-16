@@ -6,9 +6,9 @@
 
 <img src='https://peterwang512.github.io/CNNDetection/images/teaser.png' width=1200>
 
-This repository contains models, evaluation code, and training code on datasets from our paper. If you would like to run our pretrained model on your image/dataset see [(2) Quick start](https://github.com/PeterWang512/CNNDetection#2-quick-start).
+This repository contains models, evaluation code, and training code on datasets from our paper. **If you would like to run our pretrained model on your image/dataset see [(2) Quick start](https://github.com/PeterWang512/CNNDetection#2-quick-start).**
 
-**6/13/2020 Update** The training code and dataset is released. Also, we report results when testing on uncropped images (recommended for best performance).
+**Jun 20 Update** Training code and dataset released; test results on uncropped images added (recommended for best performance).
 
 ## (1) Setup
 
@@ -24,21 +24,21 @@ This repository contains models, evaluation code, and training code on datasets 
 
 ### Run on a single image
 
+This command runs the model on a single image, and outputs the uncalibrated prediction.
+
 ```
 # Model weights need to be downloaded.
 python demo.py -f examples/real.png -m weights/blur_jpg_prob0.5.pth
 python demo.py -f examples/fake.png -m weights/blur_jpg_prob0.5.pth
 ```
 
-`demo.py` simply runs the model on a single image, and outputs the uncalibrated prediction.
-
 ### Run on a dataset
+
+This command computes AP and accuracy on a dataset. See the [provided directory](examples/realfakedir) for an example. Put your real/fake images into the appropriate subfolders to test.
 
 ```
 python demo_dir.py -d examples/realfakedir -m weights/blur_jpg_prob0.5.pth
 ```
-
-`demo_dir.py` runs the model on a dataset and outputs AP and accuracy
 
 ## (3) Dataset
 
