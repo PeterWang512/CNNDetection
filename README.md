@@ -77,7 +77,7 @@ cd ../..
 **If the script doesn't work, an alternative will be to download the zip files manually from the above google drive links. One can place the testset, training, and validation set zip files in `dataset/test`, `dataset/train`, and `dataset/val` folders, respectively, and then unzip the zip files to set everything up.**
 
 ## (4) Train your models
-We provide two example scripts to train our `Blur+JPEG(0.5)` and `Blur+JPEG(0.1)` models.
+We provide two example scripts to train our `Blur+JPEG(0.5)` and `Blur+JPEG(0.1)` models. We use `checkpoints/[model_name]/model_epoch_best.pth` as our final model.
 ```
 # Train Blur+JPEG(0.5)
 python train.py --name blur_jpg_prob0.5 --blur_prob 0.5 --blur_sig 0.0,3.0 --jpg_prob 0.5 --jpg_method cv2,pil --jpg_qual 30,100 --dataroot ./dataset/ --classes airplane,bird,bicycle,boat,bottle,bus,car,cat,cow,chair,diningtable,dog,person,pottedplant,motorbike,tvmonitor,train,sheep,sofa,horse
