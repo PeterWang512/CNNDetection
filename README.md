@@ -8,9 +8,11 @@
 
 This repository contains models, evaluation code, and training code on datasets from our paper. **If you would like to run our pretrained model on your image/dataset see [(2) Quick start](https://github.com/PeterWang512/CNNDetection#2-quick-start).**
 
-**Jun 20 Update** Training code and dataset released; test results on uncropped images added (recommended for best performance).
+**Jun 20th 2020 Update** Training code and dataset released; test results on uncropped images added (recommended for best performance).
 
-**Oct 26 Update** Some reported the download link for training data does not work. If this happens, please try the updated alternative links: [1](https://drive.google.com/drive/u/2/folders/14E_R19lqIE9JgotGz09fLPQ4NVqlYbVc) and [2](https://cmu.app.box.com/folder/124997172518?s=4syr4womrggfin0tsfhxohaec5dh6n48)
+**Oct 26th 2020 Update** Some reported the download link for training data does not work. If this happens, please try the updated alternative links: [1](https://drive.google.com/drive/u/2/folders/14E_R19lqIE9JgotGz09fLPQ4NVqlYbVc) and [2](https://cmu.app.box.com/folder/124997172518?s=4syr4womrggfin0tsfhxohaec5dh6n48)
+
+**Oct 18th 2021 Update** Our method gets 92% AUC on the recently released StyleGAN3 model! For more details, please visit this [link](https://github.com/NVlabs/stylegan3-detector). 
 
 ## (1) Setup
 
