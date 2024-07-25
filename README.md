@@ -14,6 +14,8 @@ This repository contains models, evaluation code, and training code on datasets 
 
 **Oct 18th 2021 Update** Our method gets 92% AUC on the recently released StyleGAN3 model! For more details, please visit this [link](https://github.com/NVlabs/stylegan3-detector). 
 
+**Jul 24th, 2024 Update** Unfortunately, the previous Google Drive link for the dataset is no longer available. Please use this temporary download [link](https://drive.google.com/drive/folders/1RwCSaraEUctIwFgoQXWMKFvW07gM80_3?usp=drive_link). I am planning to host the dataset on Huggingface within a week.
+
 ## (1) Setup
 
 ### Install packages
