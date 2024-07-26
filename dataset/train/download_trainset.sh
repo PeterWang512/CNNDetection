@@ -1,8 +1,14 @@
 #!/bin/bash
-DOCUMENT_ID="1iVNBV0glknyTYGA9bCxT_d0CVTOgGcKh"
-FINAL_DOWNLOADED_FILENAME="trainset.zip"
+wget https://huggingface.co/datasets/sywang/CNNDetection/resolve/main/progan_train.7z.001 &
+wget https://huggingface.co/datasets/sywang/CNNDetection/resolve/main/progan_train.7z.002 &
+wget https://huggingface.co/datasets/sywang/CNNDetection/resolve/main/progan_train.7z.003 &
+wget https://huggingface.co/datasets/sywang/CNNDetection/resolve/main/progan_train.7z.004 &
+wget https://huggingface.co/datasets/sywang/CNNDetection/resolve/main/progan_train.7z.005 &
+wget https://huggingface.co/datasets/sywang/CNNDetection/resolve/main/progan_train.7z.006 &
+wget https://huggingface.co/datasets/sywang/CNNDetection/resolve/main/progan_train.7z.007 &
+wait $(jobs -p)
 
-curl -c /tmp/cookies "https://drive.google.com/uc?export=download&id=$DOCUMENT_ID" > /tmp/intermezzo.html
-curl -L -b /tmp/cookies "https://drive.google.com$(cat /tmp/intermezzo.html | grep -Po 'uc-download-link" [^>]* href="\K[^"]*' | sed 's/\&amp;/\&/g')" > $FINAL_DOWNLOADED_FILENAME
-unzip trainset.zip
-rm trainset.zip
+7z x progan_train.7z.001
+rm progan_train.7z.*
+unzip progan_train.zip
+rm progan_train.zip

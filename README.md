@@ -16,6 +16,8 @@ This repository contains models, evaluation code, and training code on datasets 
 
 **Jul 24th, 2024 Update** Unfortunately, the previous Google Drive link for the dataset is no longer available. Please use this temporary download [link](https://drive.google.com/drive/folders/1RwCSaraEUctIwFgoQXWMKFvW07gM80_3?usp=drive_link). I am planning to host the dataset on Huggingface within a week.
 
+**Jul 26th, 2024 Update** The link has been fixed! Please follow the README to download the dataset. You will need to install 7z to prepare the dataset. For linux, run `sudo apt-get install p7zip-full` to install.
+
 ## (1) Setup
 
 ### Install packages
@@ -62,6 +64,12 @@ The training set used in the paper can be downloaded [here](https://drive.google
 The validation set consists of held-out ProGAN real and fake images, and can be downloaded [here](https://drive.google.com/file/d/1FU7xF8Wl_F8b0tgL0529qg2nZ_RpdVNL/view?usp=sharing). The directory structure is identical to that of the training set.
 
 ### Download the dataset
+Before downloading, install 7z if needed.
+```
+# Download script for linux
+sudo apt-get install p7zip-full
+```
+
 A script for downloading the dataset is as follows: 
 ```
 # Download the testset
